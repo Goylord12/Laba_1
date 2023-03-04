@@ -16,23 +16,24 @@ namespace lab_1
 
             if (length < 0) Console.WriteLine("Введите положительное количество итераций");
 
-            for(int i = 1; i <= length; i++)
-            {
-                if(i == length - 1)
+            for (int i = 1; i <= length; i++)
+            { 
+                if(i == 1)
                 {
-                    sum += (Math.Pow((x - 1), (2 * i + 1))) / ((2 * i + 1) * (Math.Pow(x + 1, 2 * i + 1)));
-                    sum *= 2;
-                    Console.WriteLine($"Сумма иттераций № {i} = {sum}");
-
+                    sum += (x - 1) / (x + 1);
+                    Console.WriteLine($"Сумма итераций № {i} = {sum}");
                 }
+            
 
                 else
                 {
-                    sum += (Math.Pow((x - 1), (2*i+1))) / ((2*i+1) * (Math.Pow(x + 1, 2 * i + 1)));
-                    Console.WriteLine($"Сумма иттераций № {i} = {sum}");
+                    sum += (Math.Pow((x - 1), (2 * i + 1))) / ((2 * i + 1) * (Math.Pow(x + 1, 2 * i + 1)));
+                    Console.WriteLine($"Сумма итераций № {i} = {sum}");
 
                 }
             }
+            sum *= 2;
+            Console.WriteLine($"Итоговая итерация = {sum}");
         }
     }
 }
